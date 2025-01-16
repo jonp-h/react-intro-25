@@ -1,5 +1,5 @@
 import ListGroup from "./components/ListGroup";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const navn = ["Jon", "Knut", "Roar", "Bent", "Heidi", "Roger"];

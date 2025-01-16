@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function ListGroup({ navn, name, setName }) {
   const [plassering, setPlassering] = useState();
+
+  useEffect(() => {
+    console.log("hello");
+  }, [plassering]);
 
   //   if (navn.length === 0) return "Tom liste";
 
