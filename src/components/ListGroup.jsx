@@ -1,23 +1,13 @@
 import { useState } from "react";
-// RFCE
 
-// ol
-// ul
-
-// li
-
-function ListGroup() {
+function ListGroup({ navn, name, setName }) {
   const [plassering, setPlassering] = useState();
-
-  //map
-  let navn = ["Jon", "Knut", "Roar", "Bent", "Heidi"];
-  //   navn = [];
 
   //   if (navn.length === 0) return "Tom liste";
 
   return (
     <>
-      <h1>Navn</h1>
+      <h1>{name}</h1>
       {navn.length !== 0 ? (
         <ul className="list-group">
           {navn.map((navn, index) => (
@@ -28,7 +18,10 @@ function ListGroup() {
                   ? "list-group-item active"
                   : "list-group-item"
               }
-              onClick={() => setPlassering(index)}
+              onClick={() => {
+                setPlassering(index);
+                setName(navn);
+              }}
             >
               {navn}
             </li>
