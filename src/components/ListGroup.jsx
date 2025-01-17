@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import AlertBox from "./AlertBox";
 
 function ListGroup({ navn, name, setName }) {
   const [plassering, setPlassering] = useState();
@@ -7,7 +8,9 @@ function ListGroup({ navn, name, setName }) {
     console.log("hello");
   }, [plassering]);
 
-  //   if (navn.length === 0) return "Tom liste";
+  if (navn.length === 0) {
+    return <AlertBox>Listen er tom!</AlertBox>;
+  }
 
   return (
     <>
